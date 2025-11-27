@@ -1,0 +1,68 @@
+# NYC Restaurant Inspection Result Prediction
+
+## Project Overview
+
+This project uses machine learning techniques to analyze hygiene inspection records from the New York City Department of Health and Mental Hygiene (DOHMH). 
+
+The primary objective is to **predict the result of a restaurant's next hygiene inspection** based on historical data, location, and cuisine characteristics. This tool aims to help identify high-risk establishments and understand the characteristics of restaurant violations across the city.
+
+## Dataset Description
+
+The dataset is sourced from **NYC Open Data** and represents a comprehensive record of restaurant inspections in New York City.
+
+* **Source:** [DOHMH New York City Restaurant Inspection Results](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j/about_data)
+* **Provider:** NYC Department of Health and Mental Hygiene (DOHMH)
+* **Size:** Approximately 800,000 rows and 26 columns.
+* **Scope:** Includes every sustained or not yet adjudicated violation citation from active restaurants up to three years prior to the data pull date.
+
+### Key Features
+* **Identifiers:** `CAMIS` (Unique Record ID), `DBA` (Restaurant Name).
+* **Location:** `BORO` (Administrative District), `Latitude`, `Longitude`, `Zip Code`.
+* **Details:** `CUISINE DESCRIPTION`, `INSPECTION DATE`.
+* **Outcome:** `ACTION`, `VIOLATION CODE`, `violation_description`, `SCORE`, `GRADE`.
+
+> **Data Note:** Establishments with an inspection date of `1/1/1900` represent new businesses that have not yet received an inspection. These records were handled specifically during the data preprocessing stage.
+
+**Attachment:** 
+
+[Restaurant Inspection Data Dictionary.xlsx](RestaurantInspectionDataDictionary_09242018.xlsx)
+
+[About NYC Restaurant Inspection Data on NYC OpenData.docx](About_NYC_Restaurant_Inspection_Data_on_NYC_OpenData_050222.docx)
+
+## Project Goal
+
+Project goal is to build a predictive model that can find the outcome of a future inspection: (Regression problem)
+* **Input:** Historical inspection history, restaurant metadata (Cuisine, violation description), and actions.
+* **Output:** The predicted result of the next inspection score.
+
+## Methodology
+
+### 1. Data Preprocessing
+* **Delete useless columns:** We delete `GRADE DATE`, `GRADE`, `RECORD DATE`.
+> **Delete reason:** From the official documents, it can be known that the “GRADE” is derived based on the size of the “SCORE”. We can also predict the score to obtain the grade more accurately. Therefore, I choose to delete the grade column (at the same time, grade has 51% missing values, which will affect the result).
+<img src="GRADE.png" width="600" alt="EDA Chart">
+
+* **Time characteristics:** Seperate `INSPECTION DATE` to `year`, `month`, `weekday`.
+* **Cleaning:** Using the `Processe_df` function to fill the missing values.
+
+### 2. Exploratory Data Analysis (EDA)
+* Analyzed the distribution of inspection grades across different NYC boroughs.
+* Investigated correlations between specific cuisine types and violation rates.
+
+### 3. Modeling
+We evaluated several machine learning algorithms to determine the best predictor:
+* **[Model 1]** Random Forest
+* **[Model 2]** XGBoost
+
+## Results & Evaluation
+
+The best performing model was **[XGBoost]**, achieving the following performance on the test set:
+
+| Metric | Score |
+| :--- | :--- |
+| **Accuracy** | **0.XX** |
+| **Precision** | **0.XX** |
+| **Recall** | **0.XX** |
+| **F1-Score** | **0.XX** |
+
+**Key Findings:**
