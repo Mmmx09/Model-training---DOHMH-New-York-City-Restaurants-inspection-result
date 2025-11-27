@@ -60,9 +60,6 @@ The best performing model was **[XGBoost]**, achieving the following performance
 
 | Metric | Score |
 | :--- | :--- |
-| **Accuracy** | **0.XX** |
-| **Precision** | **0.XX** |
-| **Recall** | **0.XX** |
-| **F1-Score** | **0.XX** |
+| **$R^2$** | **0.XX** |
 
 **Key Findings:**
