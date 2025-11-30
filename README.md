@@ -62,7 +62,8 @@ So in order to enhance the model's expressiveness, I chose to incorporate two re
 We evaluated several machine learning algorithms to determine the best predictor:
 * **[Model 1]** Random Forest
 * **[Model 2]** XGBoost
-
+* **[Model 3]** CatBoost
+  
 ## Results & Evaluation
 
 The best performing model was **[XGBoost]**, achieving the following performance on the test set:
