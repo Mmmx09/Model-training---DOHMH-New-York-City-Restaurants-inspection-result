@@ -40,7 +40,7 @@ Project goal is to build a predictive model that can find the outcome of a futur
 ### 1. Data Preprocessing
 * **Delete useless columns:** We delete `GRADE DATE`, `GRADE`, `RECORD DATE`.
 > **Delete reason:** From the official documents, it can be known that the “GRADE” is derived based on the size of the “SCORE”. We can also predict the score to obtain the grade more accurately. Therefore, I choose to delete the grade column (at the same time, grade has 51% missing values, which will affect the result).
-<img src="GRADE.png" width="600" alt="EDA Chart">
+<img src="images/GRADE.png" width="600" alt="EDA Chart">
 
 * **Time characteristics:** Seperate `INSPECTION DATE` to `year`, `month`, `weekday`.
 * **Cleaning:** Using the `Processe_df` function to fill the missing values.
@@ -50,10 +50,13 @@ Project goal is to build a predictive model that can find the outcome of a futur
 * Investigated correlations between specific cuisine types and violation rates.
 
 ### 3. Add feature values
-In the first round of random forest model training, I found that the value of **$R^2$** was stuck at around 0.5 and could not be improved (the problem of overfitting has been solved). 
+In the first round of random forest model training, I found that the value of **$R^2$** was stuck at around 0.5 and could not be improved (There is even the problem of overfitting.). 
 
-So in order to enhance the model's expressiveness, I chose to incorporate two related feature values.
+<img src="images/first round random forest model result.png" width="200" alt="result Chart">
 
+So in order to enhance the model's expressiveness, I chose to incorporate two related feature values:
+1. Calculate the number of days since the last inspection.
+2. Calculate the average of the scores of the past three times.
 
 ### 4. Modeling
 We evaluated several machine learning algorithms to determine the best predictor:
