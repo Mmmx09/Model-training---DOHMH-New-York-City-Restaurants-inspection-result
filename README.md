@@ -49,7 +49,13 @@ Project goal is to build a predictive model that can find the outcome of a futur
 * Analyzed the distribution of inspection grades across different NYC boroughs.
 * Investigated correlations between specific cuisine types and violation rates.
 
-### 3. Modeling
+### 3. Add feature values
+In the first round of random forest model training, I found that the value of **$R^2$** was stuck at around 0.5 and could not be improved (the problem of overfitting has been solved). 
+
+So in order to enhance the model's expressiveness, I chose to incorporate two related feature values.
+
+
+### 4. Modeling
 We evaluated several machine learning algorithms to determine the best predictor:
 * **[Model 1]** Random Forest
 * **[Model 2]** XGBoost
