@@ -67,11 +67,11 @@ We evaluated several machine learning algorithms to determine the best predictor
   
 ## Results & Evaluation
 
-The best performing model was **[Random Forest model]**, achieving the following performance on the test set:
+The best performing model was **[Cat boost model]**, achieving the following performance on the test set:
 
 | Metric | Score |
 | :--- | :--- |
-| **$R^2$** | **0.80** |
+| **$R^2$** | **0.805** |
 
 **Key Findings:**
 
@@ -84,7 +84,7 @@ The best performing model was **[Random Forest model]**, achieving the following
 | Cat boost model | **0.813** | **0.805** |
 | Gradient boost model | **0.849** | **0.811** |
 
-Overall, I found that the random forest model has better expressiveness and stronger generalization ability. The expressiveness of other models is slightly inferior to that of Random Forest, and they all have a slight overfit. Regarding the upper limit of this model, I found that under various algorithms, the **$R^2$** of the model is around 0.80-0.82, which is difficult to improve and is currently the optimal value under feature engineering.
+Overall, I found that the cat boost model has better expressiveness and stronger generalization ability. The expressiveness of other models is slightly inferior to that of cat boost model, and they all have a slight overfit. Regarding the upper limit of this model, I found that under various algorithms, the **$R^2$** of the model is around 0.80-0.82, which is difficult to improve and is currently the optimal value under feature engineering.
 
 #### 2.Feature Importance Insights
 
