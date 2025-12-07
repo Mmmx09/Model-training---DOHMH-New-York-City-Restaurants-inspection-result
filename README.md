@@ -46,11 +46,12 @@ Project goal is to build a predictive model that can find the outcome of a futur
 * **Cleaning:** Using the `Processe_df` function to fill the missing values.
 
 ### 2. Exploratory Data Analysis (EDA)
-* Analyzed the distribution of inspection grades across different NYC boroughs.
-* Investigated correlations between specific cuisine types and violation rates.
+* Grade & Score Analysis: Show the distribution of scores and how this distribution corresponds to the A/B/C grades in reality.
+* Cuisine Risk Analysis: Identify which cuisines generally have poorer hygiene conditions and which ones are the best.
+* Feature Correlation Heatmap
 
 ### 3. Add feature values
-In the first round of random forest model training, I found that the value of **$R^2$** was stuck at around 0.5 and could not be improved (There is even the problem of overfitting.). 
+In the first round of random forest model training, I found that the value of **$R^2$** was stuck at around 0.5 and could not be improved (There is even the problem of overfitting). 
 
 <img src="images/first round random forest model result.png" width="200" alt="result Chart">
 
@@ -67,7 +68,7 @@ We evaluated several machine learning algorithms to determine the best predictor
   
 ## Results & Evaluation
 
-The best performing model was **[Cat boost model]**, achieving the following performance on the test set:
+The best performing model was **Cat boost model**, achieving the following performance on the test set:
 
 | Metric | Score |
 | :--- | :--- |
