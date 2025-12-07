@@ -6,8 +6,6 @@ This project uses machine learning techniques to analyze hygiene inspection reco
 
 The primary objective is to **predict the result of a restaurant's next hygiene inspection** based on historical data, location, and cuisine characteristics. This tool aims to help identify high-risk establishments and understand the characteristics of restaurant violations across the city.
 
-[Streamlit Webpage](http://localhost:8501)
-
 ## Dataset Description
 
 The dataset is sourced from **NYC Open Data** and represents a comprehensive record of restaurant inspections in New York City.
@@ -95,3 +93,9 @@ Through the analysis of importance and feature correlation, I discovered the thr
 * `avg_last_3_scores`: The average score of the past three checks (Historical inertia).
 * `days_since_last`: The number of days since the last inspection (Regulatory pressure and time decay).
 * `action`: Administrative handling result.
+
+## Streamlit demonstration
+Clone my Github project and write `streamlit run app1.py` in terminal, then you can go to my website.
+
+
+
