@@ -60,16 +60,35 @@ So in order to enhance the model's expressiveness, I chose to incorporate two re
 
 ### 4. Modeling
 We evaluated several machine learning algorithms to determine the best predictor:
-* **[Model 1]** Random Forest
-* **[Model 2]** XGBoost
-* **[Model 3]** CatBoost
+* **[Model 1]** Random Forest model
+* **[Model 2]** XGBoost model
+* **[Model 3]** CatBoost model
+* **[Model 4]** GradientBoost model
   
 ## Results & Evaluation
 
-The best performing model was **[XGBoost]**, achieving the following performance on the test set:
+The best performing model was **[Random Forest model]**, achieving the following performance on the test set:
 
 | Metric | Score |
 | :--- | :--- |
-| **$R^2$** | **0.XX** |
+| **$R^2$** | **0.80** |
 
 **Key Findings:**
+
+#### 1. Model Performance & Selection
+
+| Model (**$R^2$**) | Score on Training set |  Score on validation set |
+| :--- | :--- |:--- |
+| Random forest model | **0.819** | **0.800** |
+| XG boost model | **0.843** | **0.811** |
+| Cat boost model | **0.813** | **0.805** |
+| Gradient boost model | **0.849** | **0.811** |
+
+Overall, I found that the random forest model has better expressiveness and stronger generalization ability. The expressiveness of other models is slightly inferior to that of Random Forest, and they all have a slight overfit. Regarding the upper limit of this model, I found that under various algorithms, the **$R^2$** of the model is around 0.80-0.82, which is difficult to improve and is currently the optimal value under feature engineering.
+
+#### 2.Feature Importance Insights
+
+Through the analysis of importance and feature correlation, I discovered the three core elements for predicting the hygiene score of restaurants in New York City:
+* `avg_last_3_scores`: The average score of the past three checks (Historical inertia).
+* `days_since_last`: The number of days since the last inspection (Regulatory pressure and time decay).
+* `action`: Administrative handling result.
