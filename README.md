@@ -6,6 +6,8 @@ This project uses machine learning techniques to analyze hygiene inspection reco
 
 The primary objective is to **predict the result of a restaurant's next hygiene inspection** based on historical data, location, and cuisine characteristics. This tool aims to help identify high-risk establishments and understand the characteristics of restaurant violations across the city.
 
+Streamlit demonstration: https://model-training---dohmh-new-york-city-restaurants-inspection-re.streamlit.app/
+
 ## Dataset Description
 
 The dataset is sourced from **NYC Open Data** and represents a comprehensive record of restaurant inspections in New York City.
