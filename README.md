@@ -96,8 +96,6 @@ Through the analysis of importance and feature correlation, I discovered the thr
 * `days_since_last`: The number of days since the last inspection (Regulatory pressure and time decay).
 * `action`: Administrative handling result.
 
-## Streamlit demonstration
-Clone my Github project and write `streamlit run app1.py` in terminal, then you can go to my website.
 
 
 
